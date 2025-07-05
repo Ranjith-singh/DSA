@@ -1,0 +1,24 @@
+searching :
+    for finding a character has appeared how many in a string it takes O(n) time complexity normally 
+    this is where the concept of hashing comes into place
+hashing :
+    when you store all the characters in a array :
+        space complexity is O(256)
+        time complexity for searching is O(1)
+    but the same cannot be true for numbers
+        an array size can at max go upto 10^7 or 10^8 in global scope
+        when the array's max element size is within this range then fine or else this technique cannot be used
+    hashMap and hashSet :
+        2 types
+            ordered map
+            unordered map (java : hash map)
+        if the element is appearing 1st time the element is added to the map with the count of 1
+        if the element re-appears the count value for that particular element is fetched and then incremented
+            space complexity :
+                O(distint element in a string or array)
+            time complexity :
+                O(1) in both best and average case and in worst case takes O(n)
+            ordered map in worst case takes O(log n)
+        hashing can be done in different ways :
+            division method
+            square method

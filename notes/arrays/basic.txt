@@ -1,0 +1,47 @@
+the maximum size of the array can be 10^6 in local and 10^7 in global
+when only declaring a array :
+    local takes garbage value
+    global takes 0
+problems :
+    find largest
+    find second largest :
+        in second if add element>second and element<largest condition
+    find if sorted
+    remove duplicate in sorted array no extra space:
+        use 2 pointer approach
+        return last element next index
+    left rotate by 1 position
+    left rotate by d positions :
+        better approach :
+            use temp array of size d
+        optimal approach :
+            reverse array
+    move zeros to end :
+        2 pointer approach
+    linear search
+    union of 2 arrays :
+        2 pointer approach
+    intersection of arrays :
+        2 pointer approach
+    Max consecutive one :
+        use previous element to find consecutive
+    Find missing number in an array :
+        better approach :
+            hashing
+        optimal approach :
+            use xor or sum
+    Find the number that appears once, and other numbers twice :
+        better approach :
+            hashing
+        optimal approach :
+            use xor
+    Longest subarray with given sum K(positives) :
+        better approach :
+            hashing : use reverse engineering
+        optimal approach :
+            2 pointer approach
+    Longest subarray with sum K (Positives + Negatives) :
+        hashing : use reverse engineering
+    
+    
+    

@@ -1,0 +1,70 @@
+problems :
+    2 sum problem :
+        better approach :
+            hashing
+        optimal approach :
+            2 pointer approach
+    sort 0,1 and 2's :
+        better approach :
+            since the values are limited use counter to count each value
+        optimal approach :
+            dutch national flag algo :
+                3 pointer approach(low, mid, high)
+                consider the section from mid to high is unsorted
+                put them into particular sections based on the values :
+                    if 0 then in section 0 to low-1
+                    if 1 then in section low to mid-1
+                    if 2 then in section high+1 to n-1
+    Majority element :
+        better approach :
+            hashing
+        optimal approach :
+            morre's voting algo :
+                when count = 0 the re-initialize the value and increment count
+                when same value occurs increment count or else decrement
+                after traversing the array get the value stored and count weather it's the majority element
+    subarray sum :
+        better approach :
+            hashing
+            use array itself to store the max sum at that particular moment in the array
+        optimal approach :
+            kadane's algo
+    Stock buy and sell
+    Rearrange Array Elements by Sign :
+        generate and add values to 2 array's positive and Negative
+        traverse the smallest array and place Elements from both the array's
+        then place rest of the elements
+    next permutation :
+        when looking for the next permutation look for the permutation that is just greater then this permutation
+        if none get the first permutation
+        process :
+            get the breakPoint in the array from the right
+            if no breakPoint :
+                reverse the array
+            notice elements after the breakPoint are reverse sorted
+            traverse the array again from right and swap the breakPoint element with the element larger then it and break
+            then to sort a reverse sorted array reverse it
+    note :
+        to reverse the sorting order in an array reverse teh array
+    Set Matrix Zeroes :
+        better approach :
+            use 2 1D arrays :
+                one to keep track of row index of a value in Matrix
+                other to keep track of column index of a value in Matrix
+        optimal approach :
+            consider the 1st row as an 1D array and 1st column as an 1D array
+            for the (0,0) index don't merge the 1D arrays :
+                keep separate row0 or col0 element
+    rotate matrix by 90 degree :
+        better approach :
+            the column index gets interchanged with row index
+            row index becomes (n-1- row)th index
+        optimal :
+            transpose the matrix
+            reverse each row
+    Print the matrix in spiral manner :
+        use 4 pointer approach
+        note : be sure to check all conditions
+    Count subarrays with given sum :
+        hashing : reverse engineering
+

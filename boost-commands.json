@@ -1,0 +1,5 @@
+{
+  "mainRun": "python main.py",
+  "cl": "clear",
+  "dt": "date"
+}

@@ -1,0 +1,13 @@
+Recursion :
+    procedural Recursion :
+        function call is done at the last
+    functional Recursion :
+        vise versa
+    applications :
+        array reversal
+        palindrome
+    multi Recursion :
+        multiple function calls within a single function
+        applications :
+            fibonacci problem
+

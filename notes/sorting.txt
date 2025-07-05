@@ -1,0 +1,72 @@
+sorting :
+    selection sort :
+        select the min element in the array and swap it with the min index
+        after that consider only the unsorted part of the array i.e exclude the index of the swapped min element and do the same for the rest
+        time complexity :
+            O(n^2)
+    bubble sort :
+        sort the adjacent elements element till the last index :
+            swap the adjacent elements based on greater element till the last index
+        increment count for each swap
+        if count = 0 then break :
+            array already swapped
+        else exclude the sorted part of the array i.e the last element and do the same for the rest
+        time complexity :
+            O(n^2) for average, worst case
+            O(n) for best case
+    insertion sort :
+        consider the first element as sorted part of the array and rest as unsorted
+        compare each element of the unsorted array with the sorted part from last index
+        if sorted element is greater than the unsorted element move the sorted element 1 index above
+        else break and add the unsorted element to the sorted array index where the breakage occur
+        time complexity :
+            O(n^2) for average, worst case
+            O(n) for best case
+    merge sort :
+        2 parts :
+            divide 
+            merge
+        in the divide part we reduce the array into 2 equal parts 
+        until their is only 1 element left in the array:
+            for which the case would be low>=high
+        after that we merge the divided array by using a merge function
+        merge function :
+            get the elements of the divided sorted array
+            create a new array which is of combined size of both the arrays
+            compare and push each elements of the array's from first to last into the new array
+            increment the pointer of the array whose element is pushed
+            when either of the one array is empty push rest of the elements of the other array
+            then place the elements of the new array into the original array in its appropriate position i.e low to high
+        time complexity :
+            O(n log n)
+        space complexity
+            O(n)
+    quick sort :
+        2 parts :
+            partition
+            divide
+            partition function :
+                we consider a pivot in the given array
+                pivot can be any element 1st, last or middle
+                for our ex we will consider pivot is 1st element
+                our job is to place this pivot at its correct position and make sure all elements in the left are smaller than pivot and vise versa
+                process :
+                    we assign 2 variables i and j for low and high resp and keep track that i<j
+                    we increment i until we find a element greater than pivot
+                    we increment j until we find a element less than pivot
+                    then we see weather i has crossed j if yes we don't swap or else we swap
+                    then we place the swap pivot with the jth position element
+            in the divide part we reduce the array into 2 parts:
+                one from low to partition -1
+                and other from partition +1 to high
+            until their is only 1 element left in the array:
+                for which the case would be low>=high
+        time complexity :
+            O(n log n) for best and average case
+        space complexity :
+            O(1)
+            
+        
+
+
+            

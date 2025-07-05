@@ -1,0 +1,42 @@
+Pascal's Triangle :
+    value at ith row and jth col :
+        use the combinations nCr formula and reduce the equation
+    entire ith row :
+        nCr formula where n is constant r changes
+        add just r and (n-r)th element in the previous equation/element to denominator and numerator resp to get the value
+majority element(n/3) :
+    use 2 counter and 2 elements and compare with other elements but not with each other
+3 sum problem :
+    better approach :
+        use hashing
+    optimal approach :
+        sort the array
+        use 3 pointer approach
+4 sum problem :
+    better approach :
+        use hashing
+    optimal approach :
+        sort the array
+        use 3 pointer approach
+Count number of subarrays with given xor K :
+    use hashing
+Merge overlapping sub-intervals :
+    override the original sort while returning
+Merge two sorted arrays without extra space :
+    2 pointer approach
+    shell sort's : 
+        gap approach
+missing and duplicate in an array :
+    better approach :
+        use hashing
+    optimal approach :
+        use Maths(sum and sq sum)
+        use xor
+Count Inversions :
+    (a[i]>a[j] where i<j)
+    Merge sort technique with count variable
+Reverse Pairs :
+    (a[i]>2*a[j] where i<j)
+    Merge sort technique with count variable
+Maximum Product Subarray :
+    prefix and suffix sum approach
