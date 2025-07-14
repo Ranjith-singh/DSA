@@ -1,0 +1,73 @@
+note:
+    Binary search problems are better understood with graph
+
+problems :
+    Binary search for smallest index
+    Binary search hack :
+        value >= target :
+            return low
+        value <target :
+            return high
+        value> target :
+            return low
+        value<=target :
+            return high
+    Implement Lower Bound :
+        value >= target :
+            return low
+    Implement upper Bound :
+        value> target :
+            return low
+    Search Insert Position :
+        Lower Bound problem
+    Floor/Ceil in Sorted Array :
+        Floor : value<=target
+        Ceil : value >= target
+    Find the first or last occurrence of a given number in a sorted array
+    Count occurrences of a number in a sorted array with duplicates
+    Search in Rotated Sorted Array :
+        when array is split one part of the array is sorted
+        if sorted part consist of element :
+            look in sorted part
+        else look in other part
+    Search in Rotated Sorted Array II :
+        same as above but when low, mid and high are equal :
+            bring both low and high closer by one pointer
+    find the Minimum Rotated sorted Array:
+        split the array from mid and check for the sorted part:
+            if left is sorted compare the low and Min and continue with the right part
+            if right is sorted compare the mid and min and continue with the left part
+    find how many times array has been rotated:
+        find the min element in the array as above
+        it's index is the number of times rotated
+    Single element in Sorted array:
+        every element has duplicate element except one
+        resolve edge cases like single element, first element and second element
+        compare the element with it's previous and next element
+            if found return
+            if not found:
+                move to right half if:
+                    element mid is at odd and next element is its duplicate or
+                        element mid is even and previous element is its duplicate
+            else move to left half
+        return -1 as default
+    peak element in an array:
+        element > its next and previous element
+        add edge cases for 1 element, 1st element and last element
+        return any 1 of the peak elements present in a array
+        lets consider if array has only 1 peak element:
+            if mid point to peak:
+                return peak
+            if mid point left of peak :
+                move to right(draw graph for better understanding)
+            else:
+                move to left
+        for multiple peaks:
+            use the same approach as above because even if some of the peaks are eliminated
+                you will always reach to one peak which is enough
+
+
+    
+    
+
+    
