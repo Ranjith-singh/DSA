@@ -1,0 +1,50 @@
+problem:
+    Find the row with maximum number of 1's:
+        each row is sorted
+        better approach:
+            traverse through each row
+            find first occurrence of 1 then do n-index to get 1s
+        optimal approach:
+            for each row since sorted use binarySearch to get first occurrence of 1
+            the n-index to get 1s
+    Search in 2D array:
+        optimal approach:
+            since entire 2D array is sorted get low and high
+            low=0 and high=n*m-1
+            get mid if a[mid/m][mid%m]==ele:
+                return true
+            else if a[mid/m][mid%m]<ele:
+                move right
+            else:
+                move left
+    Search in a row and column wise sorted matrix:
+        the arr is sorted in (L) or reverse L manner
+        optimal approach:
+            consider top-right as 1st ele
+            if ele==x:
+                return ele
+            else if ele<x:
+                move down
+            else:
+                move left
+    Find Peak Element (2D Matrix):
+        find the mid row in a 2D Matrix
+        find the max in that row
+        find the up and down ele of the max in 2d array
+        if max>up and max>down:
+            return max
+        else if max<up:
+            high=mid-1
+        else:
+            low=mid+1
+    Matrix Median:
+        find the lowest and highest ele in the matrix
+        consider req=(n*m)/2 which indicates that Median>req
+        find mid and elements <=mid in the matrix
+        if ans<=req:
+            low=mid+1
+        else:
+            high=mid-1
+    
+
+    

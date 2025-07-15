@@ -1,0 +1,13 @@
+types of trees:
+    Full BinaryTree:
+        children should be 0 or 2
+    complete BinaryTree:
+        all levels are filled except last level
+        last level filling should be from left
+    perfect BinaryTree:
+        Full BinaryTree + complete BinaryTree
+        internal nodes should have 2 children and left nodes should have same depth
+    Balanced BinaryTree:
+        height diff b/w the left and right subTree of any node should be atmost 1
+    Degenerate BinaryTree:
+        each node has only 1 child similar to linked list
