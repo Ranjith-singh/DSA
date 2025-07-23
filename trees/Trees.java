@@ -1,6 +1,8 @@
 package trees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -169,9 +171,9 @@ public class Trees {
         Trees root = new Trees(1);
         root.left= new Trees(2);
         root.right=new Trees(3);
-        root.right.right=new Trees(4);
-        root.left.left = new Trees(5);
-        root.left.right = new Trees(6);
+        root.right.right=new Trees(6);
+        root.left.left = new Trees(4);
+        root.left.right = new Trees(5);
 
         // recusive traversals
         Trees.recusiveTraversals(root);

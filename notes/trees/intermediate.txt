@@ -1,0 +1,53 @@
+problems:
+    Height of a Binary Tree:
+        Height is the number of max edges from the root node
+        if root is null or leaf node:
+            then Height=0
+        else:
+            1 + max(Height(root.left),Height(root.right))
+    Check if the Binary tree is height-balanced or not:
+        if the height diff b/w the left and right is >1:
+            then return -1
+        else:
+            return height
+        return -1 if left or right return -1 
+            since the statement height diff<1 for balanced tree should hold true at all points
+    Diameter of Binary Tree:
+        longest path along the leaf nodes
+        may exclude root 
+        use an additional arg array:
+            since array is pass by reference and variable is pass by value
+        if root==null:
+            return -1;
+        compare the max dia stored in arr with the obtained dia form: 2+maxLeft+maxRight
+    Maximum path sum:
+        similar as above approach but instead of height consider value of node
+    Check if two trees are identical or not:
+        at any point check if root1.data!=root2.data return false
+        else:
+            check for their left and right subTree if any one return false return false
+    Zig Zag Traversal of Binary Tree:
+        if Level is even return left->right else right->left
+        use flag variable to reverse the list obtained based on the Level
+    Boundary Traversal of Binary Tree:
+        add root node
+        use preorder for left subTree but consider right part only if left part==null && != leaf
+        use preorder traversal from root but only take the leaf nodes
+        use Postorder for right subTree bit consider the leaf part only when right part==null && !=leaf
+    Vertical Order Traversal of Binary Tree:
+        use queue that stores a pair dataType which consist of Node, int(x axis)
+        use TreeMap that stores <int, List> in ordered fashion according to keys
+        use final list to add the TreeMap.values() in the list
+    Top View of Binary Tree:
+        Similar to Vertical order traversal
+        only consider the first occurrence at x-axis
+    Bottom View of Binary Tree:
+        Similar to Vertical order traversal
+        only consider the last occurrence at x-axis
+    Right/Left View of Binary Tree:
+        Similar to Vertical order traversal
+        consider y axis instead of x axis
+    Symmetric Binary Tree:
+        left subTree is mirror of right subTree
+        similar to identical but for left subTree left part==right subTree right part and vise versa
+

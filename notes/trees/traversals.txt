@@ -1,0 +1,141 @@
+tree traversals:
+    preorder traversal(Root-left-right):
+        recursive:
+            check if root==null:
+                return
+            else:
+                print root.data
+                call preorder for root.left and root.right
+        iterative:
+            create a stack and add the root node to it
+            while stack is not empty:
+                root = stack.pop()
+                check if root == null
+                    continue;
+                print root.data
+                add root.right and root.left to the stack
+    Inorder traversal(left-root-right)
+        recursive:
+            check if root==null
+                return
+            call Inorder for root.left
+            print root.data
+            call Inorder for root.right
+        iterative:
+            create a stack for Nodes
+            while(true):
+                if root!=null:
+                    add root to stack and move left part
+                else:
+                    check if stack.isEmpty():
+                        break;
+                    root = stack.pop()
+                    print root.data and move to right part
+            approach :
+                when null occurs on the left part:
+                    we consider the left part as sorted
+                    print root data and move to right part
+                when their is no right part we move to parent of the root through stack
+    Postorder traversal:
+        recursive:
+            check if root==null:
+                return
+            call the Postorder for left and right parts
+            print the root.data
+        iterative:
+            2 stack:
+                create 2 stacks and add the root to the first stack
+                while stack1 is not empty:
+                    pop stack1 assign it to root and add to stack2
+                    check if root left and right are not null then add them to stack resp
+                print the nodes from stack2 using stack2.pop till it is empty
+            1 stack:
+                create a stack and check while root!=null || !stack.isEmpty()
+                    if root!=null:
+                        add root to stack and move to left part
+                    else:
+                        check if the top element of stack has right part using temp
+                        if yes:
+                            assign right part to root
+                        else:
+                            this is the leaf node
+                            print the stack.pop() data
+                            while stack is not empty and temp = stack.top().right:
+                                print temp and assign temp = stack.pop()
+                approach:
+                    move to extreme leaf of the tree
+                    when it reaches null print check for right part
+                    if right part exists move to right part
+                    if no right part print the root data
+                    then check if root is the right part of its parent
+                    if yes:
+                        print the parent data since right part is executed using stack
+                    else:
+                        check if it has any right part
+                        if yes:
+                            assign it to root
+                        else:
+                            print parent data and move to GrandParent using stack
+    Levelorder traversal:
+        create a queue and add the root node
+        while queue is not empty:
+            remove the element for the queue
+            check if ele == null:
+                continue;
+            print ele and add the ele.left and ele.right to the queue
+    Level order traversal in spiral form:
+        similar to Levelorder traversal but use 2 queues and a flag variable
+        traverse 1 queue and put it in other queue till empty
+        reverse the flag after each loop and add elements form the other stack to this stack
+    Iterative Preorder Traversal of Binary Tree:
+        use stack data structure
+        add root-right-left because stack follows FILO
+    Iterative Inorder Traversal of Binary Tree:
+        use stack data structure
+        move towards the left of the tree untill it reaches null
+        if null the left subTree is completed print the root and move right
+        if right==null:
+            entire SubTree is completed print the root parent and move towards parent's right part
+        if right!=null:
+            change root to root.right
+    Iterative Post-order Traversal of Binary Tree:
+        using 2 stack:
+            add root from stack1 to stack2
+            add root.left and root.right to stack1
+            stack2 will contain data in the form root-right-left
+            traverse the stack2 using stack2.pop() to get Postorder traversal
+        using 1 stack:
+            add root to stack and curr
+            while root!=null and stack!=empty:
+                if curr!=null:
+                    add to stack move left
+                else:
+                    temp = stack.peek().right
+                    if temp==null:
+                        temp = stack.pop();
+                        print temp.data
+                        while stack!=empty and temp==stack.peek().right: (whether the node use traversed was right node)
+                            temp = stack.pop()
+                            print temp.data
+                    else:
+                        curr=temp;
+    1 3
+    pre: 1 2 4 5 3 6
+    in: 4 2 5 1 3 6
+    post: 4 5 2 6 3 1
+    preorder, Inorder and Postorder in one traversal:
+        use stack of tuple(Node, int)
+        add root,1 in stack
+        while stack!=empty:
+            tuple = stack.pop();
+            if tuple.ind==1:
+                add tuple.node to preorder
+                push node,2 into the stack
+                add node.left,1 to stack if !=null
+            if tuple.ind==2:
+                add tuple.node to Inorder
+                push node,3 to stack
+                add node.right,1!=null to stack
+            if tuple.ind==3:
+                add tuple.node to Postorder
+            
