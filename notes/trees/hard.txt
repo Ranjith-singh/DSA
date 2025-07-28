@@ -1,0 +1,177 @@
+note:
+    in java primitive dataTypes as passed by value and rest are passed by reference
+problems:
+    Root to Node path Binary tree:
+        if root==null:
+            return new List
+        add root data to list
+        if root==node:
+            return list
+        list.addAll for root.left and root.right
+        return list
+    All Root to leaf:
+        use ArrayList of ArrayList as list
+        pass the obtained ArrayList as list1
+        if(root==null):
+            return list
+        add root.data to list1
+        if root==leaf:
+            add list1 to list
+        list.addAll for left and right subtrees
+        remove root.data from list1:
+            since list1 is pass by reference
+            we can't include left subTree data while calling right subtrees
+        return list;
+    LCA in Binary Tree:
+        if(root==null):
+            return null
+        if root==n1 || root==n2:
+            return root.data
+        call for left and right subTree
+        if left!=-1 && right!=-1:
+            return root.data
+        if left==-1:
+            return right
+        return left
+    Maximum width of a Binary Tree:
+        use Level order traversal
+        use Queue<pair> dataType for Node, int and add root,0
+        use max variable
+        while(!queue.isEmpty())
+            first and last variable
+            use for loop instead of while loop:
+                since for single node 0 and size-1 point to same index
+                if(i==0) then first==pair.data
+                if(i==size-1) then last==pair.data
+                if root.left!=null:
+                    queue.add(root.left,2*i+1)
+                if(root.right!=null):
+                    queue.add(root.right,2*i+2)
+            max = max of max, last-first+1
+        return max
+    Check for Children Sum Property:
+        use left and right variable
+        if root==null:
+            return 0
+        if root.left!=null:
+            left=root.left.data
+        if root.right!=null:
+            right=root.right.data
+        if left+right<root.data
+        make root.left and right data=root.data
+        call same for left and right subtree
+        if root.data<left+right:
+            root.data=left+right
+    Print all the Nodes at a distance of K in a Binary Tree:
+        use a parentTrack HashMap to keep track of parents of children's
+        use HashSet to keep track of visited
+        get the target node from the tree
+        use queue data structure
+        add target node to queue and HashSet
+        use for loop from 0 to k-1:
+            size=queue.size()
+            for loop from 0 to size-1:
+                node = queue.poll()
+                if node has parent and not in HashSet:
+                    add to queue and HashSet:
+                        to make sure you don't traverse in loop
+                if node has left child and not in HashSet:
+                    add to queue and HashSet
+                if node has right child and not in HashSet:
+                    add to queue and HashSet
+        the node remaining in the queue are at a distance k from target node
+        return them
+    Minimum time taken to BURN the Binary Tree from a Node:
+        use a parentTrack map to store the parent node of each child
+        and use HashSet to keep track of visited Nodes
+        traverse from target node to children and parent simultaneously one node at a time
+        traverse until queue becomes isEmpty
+        return the number of traversal required to burn all the leaf Nodes
+    Count total Nodes in a COMPLETE Binary Tree:
+        in COMPLETE Binary tree:
+            all leaf node are at same Level
+            leaf nodes starts filling from left to right
+        so from root node traverse to extreme left and extreme right
+        if leftHeight==rightHeight:
+            return (2^leftHeight)-1
+        else:
+            return 1 + HeightFor(root.left) + HeightFor(root.right)
+    Requirements needed to construct a Unique Binary Tree | Theory:
+        to construct any Binary Tree you need any 2 of 3 traversals
+        to construct a Unique Binary Tree you need inorder + (postOrder || preOrder)
+        inorder is imp because you can figure out the left and right part of the root from it
+    Construct Binary Tree from inorder and preorder:
+        store the inorder inside a HashMap containing elements and their indices
+        call func containing low1, high1 of inorder and low2, high2 of preOrder and the map:
+            if preOrder traverse from low1 to high1
+            if at any point low1>high1 or low2>high2:
+                return
+            get preOrder[low1] and get its index in inorder
+            assign it to root
+            build root.left and root.right
+            root.left = build(low1,index-1,inorder,low2+1,low2+index-low1,preOrder,map)
+            root.right = build(index+1,high1,inorder,low2+index-low1+1,preOrder,map)
+            return root
+    Construct the Binary Tree from Postorder and Inorder Traversal:
+        similar to above approach but consider moving from right to left in postOrder
+        root.left = build(low1, index-1, inorder, low2, low2+index-low1-1, postOrder, map)
+        root.right = build(index+1, high1, inorder, low2+index-low1, high2-1, postOrder, map)
+        return root
+    Serialize and deserialize Binary Tree:
+        Serializing:
+            Serializing a Binarytree is converting the entire tree into String/ArrayList
+            Remember to store the null values in the String using any char/value
+            use any of the one available traversal
+        deserializing:
+            converting list/String back to tree and returning root
+    Morris Preorder Traversal of a Binary Tree:
+        while root!=null:
+            if root.left==null:
+                print root move right
+            else:
+                cur = root.left
+                while cur.right!=null && cur.right!=root:
+                    cur = cur.right
+                if cur.right==null:
+                    cur.right=root
+                    print root
+                    root = root.left
+                else:
+                    cur.right=null
+                    root=root.right
+    Morris Inorder Traversal of a Binarytree:
+        similar to preOrder but
+            print the node when cur.right==root not when cur.right==null
+    Flatten Binary Tree to LinkedList:
+        to convert a tree into a linkedList
+            make root.right=root.left and root.left=null
+        while root!=null:
+            if root.left==null:
+                root=root.right
+            else:
+                cur = root.left
+                while cur.right!=null:
+                    cur=cur.right
+                cur.right=root.right
+                root.right=root.left
+                root.left=null
+    
+        
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
