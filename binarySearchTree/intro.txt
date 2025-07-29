@@ -1,0 +1,12 @@
+BinarySearchTrees are formed in such a manner that
+    for any node in the tree
+    all the nodes to its left part are <root in some cases =root
+    all the nodes to its right part are >root
+problems:
+    Introduction to BinarySearchTrees:
+        how it works
+    Search in a Binary Search Tree:
+        Search for a node
+    Find Min/Max in BST:
+        for min : left most node
+        for max : right most node

@@ -1,0 +1,60 @@
+problems:
+    Ceil in a Binary Search Tree:
+        return if node found
+        if root.data>val:
+            consider the root.data and move to its left
+        else:
+            move to its right
+    Floor in a Binary Search Tree:
+        if root.data==val:
+            return root.data
+        if root.data>val:
+            move to left
+        else:
+            consider the root.data and move to right
+    Insert a given Node in Binary Search Tree:
+        new Node can be Inserted in b/w the tree and at the end of the tree
+        Inserting at end of the tree is easy compared to b/w the tree
+            if root==null:
+                return new node
+            root1=root
+            while(root!=null){
+                if(root.data>val){
+                    if(root.left!=null){
+                        root=root.left;
+                    }
+                    else{
+                        root.left = new node;
+                        break;
+                    }
+                }
+                else{
+                    if(root.right!=null){
+                        root=root.right;
+                    }
+                    else{
+                        root.right = new Node
+                        break;
+                    }
+                }
+            }
+            return root1
+    Delete a Node in Binary Search Tree:
+        root1=root
+        if root.data == val and if right or left pointing to null:
+            return the root.left or right
+        keep track of parent node of root
+        while(root!=null):
+            if root.data>val:
+                move to left
+            else if root.data<val:
+                move to right
+            else:
+                if right or left pointing to null:
+                    return the root.left or right
+                else:
+                    move to right most node of root.left
+                    point that node right pointer to root.right
+                    replace the root with root.left
+        return root1
+
