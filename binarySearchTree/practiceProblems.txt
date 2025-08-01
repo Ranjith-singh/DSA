@@ -1,3 +1,5 @@
+note:
+    in problems remember the traversal techniques for easy solving
 problems:
     Ceil in a Binary Search Tree:
         return if node found
@@ -57,4 +59,66 @@ problems:
                     point that node right pointer to root.right
                     replace the root with root.left
         return root1
+    find Kth smallest/largest node in a BinaryTree:
+        do an inorder traversal on the tree
+        keep a counter along the way to keep track of number of nodes
+        if counter==k:
+            return node
+        for largest do reverse inorder traversal or n-largest=smallest
+    check if the tree is a Bst ot bt:
+        for a tree to be Bst all nodes on left<root<all nodes on right
+        provide a range like low to high where the value should reside
+        if root in range:
+            check for left and right subTree
+        else:
+            return false
+    LCA in a Binary Search tree:
+        if root.data >n1 & n2:
+            move left
+        if root.data < n1 & n2:
+            move right
+        else:
+            one greater one lesser or one equal other greater/lesser
+        edge case:
+            if one found check for other below
+    Construct a BST from a preorder traversal:
+        better approach:
+            sort preorder to get inorder and then use both to Construct tree
+        optimal approach:
+            root-left-right use 1 ele array index counter of preorder array
+            1 ele array because pass by reference copy
+            use low and high range for element placement
+    Inorder Successor/Predecessor in BST:
+        if greater than val possible Successor:
+            store val and move left to find immediate Successor
+        else:
+            move to right
+        reverse for Predecessor
+    Merge 2 BST's :
+        use morris traversal for on Bst O(1) space complexity
+        and place each node in other BST
+    Two Sum In BST | Check if there exists a pair with Sum K:
+        use iterator like next() and hasNext() for inorder and reverse inorder
+        comapare elements and increment/decrement values based on Sum
+    Recover BST | Correct BST with two nodes swapped:
+        use prev pointer and 3 nodes: first, mid and last
+        if prev>root:
+            if first==null:
+                first=prev
+                mid=root
+            else:
+                last=root
+        swap
+    Largest BST in Binary Tree:
+        if root.data>left.max and root.data<right.min:
+            return 1+left.size+right.size,min of root.data and left.min,max of root.data and right max
+                note: since when root==null we put Int.max in min and Int.min in max 
+                we directiy can't take left.min and right.max in above statement
+        else:
+            consider max size of left/right and pass min=Int.min and max=Int.max
+                since no one is less than Int.min and greater than Int.max no upper parent can form a Bst
+    
+        
+    
+
 
