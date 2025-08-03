@@ -1,0 +1,24 @@
+note:
+    The graph consist of vertices and edges
+    the edge can be bi-directional or uni-directional
+    the graph may contain cycles
+    tree is a subset of graph
+    the no of possible graphs containing n nodes:
+        2^X where X=n*(n-1)/2
+        X=number of edges with possible with n nodes
+problems:
+    Print adjacency list:
+        they will provide the edges and number of vertices
+        create a adj list and for each vertex add their edges both ways
+    Connected Components | Logic Explanation:
+        they provide the edges and vectors you return graphs as list
+        use recursion for to find the connecting path of list
+        keep track of the visited node using the visited array
+        call recursion for only those vertices that are not visited
+    BFS traversal:
+        use queue data structure and keep track of the visited nodes using the visited array
+        they provide the adjacency matrix of list(lists)/array(lists)
+    DFS traversal:
+        use recursion for the DFS traversal of graph
+        use visited array to keep track of visited nodes
+
