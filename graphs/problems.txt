@@ -1,0 +1,40 @@
+Number of provinces:
+    convert a edges provided to you to a adjacency list
+        by adding both side of edges to both index since it is a bidirectional edge using:
+            adj.get(edges[0]).add(edges[1]) and adj.get(edges[1]).add(edges[0])
+    use a visited array to keep track of visited vertices
+    a graph can have multiple Components and they may or may not be Connected
+    number of provinces = number of separated Components/cities
+Connected Components Problem in Matrix:
+    convert edges to adjacency list
+    form different lists for different province/Component
+    add those lists to a single list and return it
+Rotten Oranges:
+    a box has 3 different types of cells:
+        0 : no Orange
+        1 : fresh Orange
+        2 : Rotten Orange
+    what is the minimum taken to rot all Oranges and if any one fresh Orange remains return -1
+    rotting spreads in all 4 directions simultaneously if their is a fresh Orange
+    use Bfs traversal and visited array to get the minimum time to rot all Oranges
+Flood fill Algorithm:
+    they provide a (sr,sc) having the og color need to color it with the new color
+        as well as color all its 4 neighboring elements having the og color to new color
+    use Bfs/Dfs traversals and visited array to color all possible elements
+    return the colored array
+Cycle Detection in undirected Graph:
+    create a adj list from edges provided
+    keep track of both <cur ele, parent ele> while Bfs/Dfs traversals
+    if an element is not visited add it to the visited array and call the traversal for that
+    if an element is visited and not its parent element:
+        return true
+    at end return false it no Cycle found
+    make sure to traverse for all the provinces/Components
+0/1 Matrix:
+    distance of the 0 from the nearest one in a matrix
+    use Bfs traversals and visited array because you need to get the min distance
+    use a new dist matrix to mark the distance of nearest 1 in the array
+    mark the 4 neighboring elements as you visit them and increment the steps as you move along the queue elements
+    return the dist matrix
+
+
