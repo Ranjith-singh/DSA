@@ -1,0 +1,7 @@
+All pattern problems require mostly 2d array
+approach:
+    plot the number of rows to be printed and some how relate it to input
+    figure out the relation b/w rows and columns
+reverse the loop conditions based on the requirements
+begin loops from 1 instead of 0 for flexibility
+

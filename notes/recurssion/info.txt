@@ -1,0 +1,7 @@
+recursion types:
+    direct recursion: calls itself
+    indirect recursion: calls another func that internally calls main func
+    head recursion: recursion before statements
+    tail recursion: recursion after all statements
+    linear recursion: single recursion call
+    tree recursion: multiple recursion calls

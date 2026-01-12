@@ -1,11 +1,14 @@
 Pascal's Triangle :
     value at ith row and jth col :
         use the combinations nCr formula and reduce the equation
+    add the 1 at 0 index because on logic constraints
     entire ith row :
         nCr formula where n is constant r changes
         add just r and (n-r)th element in the previous equation/element to denominator and numerator resp to get the value
 majority element(n/3) :
     use 2 counter and 2 elements and compare with other elements but not with each other
+    note:
+        use cases that check primarily for the firstMajor than for secondMajor
 3 sum problem :
     better approach :
         use hashing
@@ -24,7 +27,7 @@ Merge overlapping sub-intervals :
     override the original sort while returning
 Merge two sorted arrays without extra space :
     2 pointer approach
-    shell sort's : 
+    shell sort's :
         gap approach
 missing and duplicate in an array :
     better approach :

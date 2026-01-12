@@ -1,0 +1,12 @@
+frequencies of elements in an array:
+    use hashMap or perform directly using list
+Maximum frequency of a elements with additional k incremental ops:
+    sort the array cause it groups all elements in increasing order
+    traverse the array backwards cause we can perform only incremental ops not decremental
+    use 2 pointer approach
+    keeping j as const move the i to left until gap>k:
+        indicating that the gap in numbers can be filled by k until gap<=k
+    while gap>k:
+        gap = gap - (arr[j]-arr[j-1])*(j-i); j--;
+            moves towards the left until their is a element changes and gap b/w the changed element index and i are calculated
+    keep the max freq count and if required the element also.

@@ -1,0 +1,13 @@
+Selection sort:
+    traverse the array and find the min/max
+    swap it with the min/max index in the array range
+    reduce the range by 1
+    do it till range<=1
+Bubble sort:
+    swap the elements based on the max b/w elements until we put max element in max index place
+    reduce the range of max index to max-1
+insertion sort:
+    divide the array into 2 parts sorted and unsorted resp
+    grab the 1st element in the unsorted and figure out its place in the sorted array
+        until then move increment elements index by 1
+    Once figured out break out of loop and place the element

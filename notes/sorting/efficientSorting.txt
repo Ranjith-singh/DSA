@@ -1,0 +1,19 @@
+merge sort:
+    divide the array from middle until you end up with only one element
+    after that merge the divided arrays into 1
+        While merging ensure the elements in the merge range are placed in a sorted order
+quick sort:
+    find a partition index in an array:
+        any index 1st, last or random
+    ensure that the element in the partition index is placed at it correct position and
+        all elements left to it are smaller and elements right to it are greater
+        use 2 pointer approach:
+            consider partitionIndex is last element index
+            since you took partitionIndex= lastIndex you should move 
+                until you find low at pos where all elements at its right are greater
+                cause ele[partitionIndex] should be swapped by someone ge it not lt
+            find element lt partitionindex from right and element gt partitionIndex element from left
+            swap those elements
+            keep on doing until low>high in range
+            since partitionIndex is lastIndex swap it with ele at low index and return low as pivot
+            perform similar ops for range low to pivot-1 and pivot+1 to high until low<high

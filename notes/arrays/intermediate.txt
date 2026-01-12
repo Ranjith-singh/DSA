@@ -1,3 +1,12 @@
+rules:
+    hashing
+    2 pointer approach
+    dutch national flag algo
+    kadane's algo
+    use counters and pointer's to mark array indices
+    reverse traverse helps in some cases
+    find the breakPoint beyond which array changes
+
 problems :
     2 sum problem :
         better approach :
@@ -43,9 +52,9 @@ problems :
                 reverse the array
             notice elements after the breakPoint are reverse sorted
             traverse the array again from right and swap the breakPoint element with the element larger then it and break
-            then to sort a reverse sorted array reverse it
+            then to sort a reverse sorted array: reverse it
     note :
-        to reverse the sorting order in an array reverse teh array
+        to reverse the sorting order in an array reverse the array
     Set Matrix Zeroes :
         better approach :
             use 2 1D arrays :

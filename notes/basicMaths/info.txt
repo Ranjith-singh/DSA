@@ -1,0 +1,19 @@
+use % operator to get last digit
+reverse a number:
+    raise the number by 1 decimal point
+    add the new number
+print all Divisors:
+    traverse till sqrt(n)
+check for prime:
+    check for divisors b/w 2 and n-1
+    std isPrime func
+    multiple primes:
+        keep a boolean array
+        check if a number is prime using boolean array value is true
+        check till sqrt of N
+        if number is prime:
+            mark all its multiples as false
+gcd of 2 number:
+    find greatest divisors and return
+    gcd(a,b): a is greater than b
+        recursively call gcd(b,a%b) until b=0

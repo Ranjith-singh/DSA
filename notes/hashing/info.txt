@@ -1,0 +1,16 @@
+hashing:
+    storing the values for input keys
+arrayBased hashing:
+    for numbers:
+        if input size is less than the max array size possible
+        use array for storing the values of input keys
+    for characters:
+        here the input size is fixed unlike in case of numbers
+hashMap and HashSet:
+    it uses division method, mid sq method etc to store the values for keys above 10^7
+    ordered Map:
+        tc: logN->N is number of keys stored in hash
+    unordered Map:
+        best and average tc: 1
+        worst case tc: N
+

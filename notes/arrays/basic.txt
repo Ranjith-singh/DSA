@@ -2,6 +2,12 @@ the maximum size of the array can be 10^6 in local and 10^7 in global
 when only declaring a array :
     local takes garbage value
     global takes 0
+rules:
+    use 2 pointer approach
+    keep count
+    use hashing
+    xor
+    sorted: binarySearch
 problems :
     find largest
     find second largest :
@@ -37,7 +43,7 @@ problems :
             use xor
     Longest subarray with given sum K(positives) :
         better approach :
-            hashing : use reverse engineering
+            hashing : use reverse engineering: instead of finding k find sum-k while traversing the array
         optimal approach :
             2 pointer approach
     Longest subarray with sum K (Positives + Negatives) :

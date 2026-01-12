@@ -36,5 +36,12 @@ Cycle Detection in undirected Graph:
     use a new dist matrix to mark the distance of nearest 1 in the array
     mark the 4 neighboring elements as you visit them and increment the steps as you move along the queue elements
     return the dist matrix
+surrounded regions:
+    if a region of 0 is completely surrounded by 1 on all 4 sides then convert them to one
+    check for the all the 0's at the boundary of the matrix then mark all its neighbors using dfs/Bfs traversals
+        because if their is a 0 at the boundary it cannot be completely surrounded by 1's
+    using the marked visited array if element visited mark 0 else 1
+
+
 
 
