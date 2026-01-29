@@ -67,7 +67,7 @@ problems:
     min of max problems:
     Aggressive cows:
         place the cows in a array with co-ordinates such that
-            the min distance b/e the cows is max
+            the max distance b/w the cows is min
         the range is from 1 to max distance which is last ele- first ele since sorted
         find mid and no of cows which can come under this distance
         if no of cows>=threshold
@@ -88,20 +88,36 @@ problems:
     painter's partition:
         similar to Allocate books
     minimize max distance b/w gas stations:
-        ans is double value with consideration upto 10^-6
+        ans is double value with comparison upto 1^-6 demical places with the og testCase output
         better solution:
-            array that keeps track of the cylinders b/w the checkpoints
-            priority queue of obj's keeping the distance b/w the cylinders according to array elements using index
-                it always returns the max element
-            place distance and their index in priority queue and create a array
-            pop the top element from the PQ(priority queue) get distance and cylinders b/w them using the array
-            do distance*(array(cylinders)+1)/array(cylinders)+2 to get new distance by placing the new cylinder
-            update no of cylinders in the array
-            return the top
+            make sure to use double dataType where ever needed
+            Approach 1:
+                priorityQueue(PQ) that takes the distance b/w the og cylinders and their index
+                    we take priorityQueue Cause it auto sorts the elements in order we prefer, for our case Desc
+                Array marking the cylinders to be placed(lets refer them as virtual cylinders) b/w the og cylinders
+                note: point to remember the og cylinder position can't be changed but can change the virtual cylinders position
+                Since it's a queue which follows(FIFO) we pop() the latest max distance(max Section distance) and at what index it is present
+                through the index using the array we see weather we have placed any virtual cylinders b/w max distance
+                if yes: then we can re-arrange its position such that the max Section is equally divided among the max distance
+                else: we can simply place the cylinder at mid to equally divide the max Section
+                    virtualCylinders[index]++
+                    new max section distance= originalGap(using the PQ index)/(virtualCylinders[index]
+                        +1(Cause n cylinders in b/w max distance divides it into n+1 sections))
+                now add the new section distance and index to the PQ
+                perform this until all the virtualCylinders have been placed and get the max Section distance
+            Approach 2:
+                array that keeps track of the cylinders b/w the checkpoints
+                priority queue of obj's keeping the distance b/w the cylinders according to array elements using index
+                    it always returns the max element
+                place distance and their index in priority queue and create a array
+                pop the top element from the PQ(priority queue) get distance and cylinders b/w them using the array
+                do distance*(array(cylinders)+1)/array(cylinders)+2 to get new distance by placing the new cylinder
+                update no of cylinders in the array
+                return the top
         optimal solution:
             can we place given cylinders b/w the present cylinders
-            range from 0 to max consecutive diff 
-            while((high-low)>=10^-6):
+            range from 0 to max consecutive diff
+            while((high-low)>=1^-6):
                 find mid and the number of gas stations can be placed with mid distance
                 if gas stations<=given stations:
                     consider the mid

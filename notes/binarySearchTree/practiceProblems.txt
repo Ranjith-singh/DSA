@@ -112,7 +112,7 @@ problems:
     Largest BST in Binary Tree:
         if root.data>left.max and root.data<right.min:
             return 1+left.size+right.size,min of root.data and left.min,max of root.data and right max
-                note: since when root==null we put Int.max in min and Int.min in max 
+                note: since when root==null we put Int.max in min and Int.min in max
                 we directiy can't take left.min and right.max in above statement
         else:
             consider max size of left/right and pass min=Int.min and max=Int.max
