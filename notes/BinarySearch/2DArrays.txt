@@ -3,10 +3,15 @@ problem:
         each row is sorted
         better approach:
             traverse through each row
-            find first occurrence of 1 then do n-index to get 1s
+            perform binarySearch to get first occurrence of 1 then use row length to get number of 1's
         optimal approach:
-            for each row since sorted use binarySearch to get first occurrence of 1
-            the n-index to get 1s
+            since the array is sorted and only consist of (0,1)
+                All 1's if present exists on the rightmost part of the row
+            we need to return the 1st max 1's
+            consider the top right corner of the 2d array
+                if 1 found: make it curMax row and check for previous column
+                else: move to the next row to find the row which has more 1's then the curMax
+            perform this until row<n and col>=0 to get the maxRow
     Search in 2D array:
         optimal approach:
             since entire 2D array is sorted get low and high
@@ -18,9 +23,12 @@ problem:
             else:
                 move left
     Search in a row and column wise sorted matrix:
-        the arr is sorted in (L) or reverse L manner
+        the main point to remember is all the rows and columns are sorted
+        so you need to select a point in 2d array such that
+            if you traverse row wise and column wise 1 is increasing and other becomes decreasing
+        for this problem you can select the top right or bottom left point
+            and use similar approach as "maximum number of 1's in 2d array"
         optimal approach:
-            consider top-right as 1st ele
             if ele==x:
                 return ele
             else if ele<x:
@@ -34,17 +42,36 @@ problem:
         if max>up and max>down:
             return max
         else if max<up:
+            (here there is a imp step being performed:
+                if up> max it is greater than all the elements in that row
+                which implies same condition work for all Elements in that row
+                this is a one to many mapping condition
+            )
             high=mid-1
         else:
             low=mid+1
+        
     Matrix Median:
-        find the lowest and highest ele in the matrix
-        consider req=(n*m)/2 which indicates that Median>req
-        find mid and elements <=mid in the matrix
-        if ans<=req:
-            low=mid+1
-        else:
-            high=mid-1
-    
-
-    
+        Understanding 1:
+            find the lowest and highest ele in the matrix
+            consider req=(n*m)/2 which indicates that Median>req
+            find mid and elements <=mid in the matrix
+            if ans<=req:
+                low=mid+1
+            else:
+                high=mid-1
+        Understanding 2:
+            brute force approach:
+                convert 2d array into 1d array
+                sort the 1d array and take out the Element at Median
+            optimal approach:
+                hints:
+                    all rows are sorted
+                    no of rows and columns are odd
+                so Median is a single Element
+                the min/max in first/last col is the min/max of 2d array resp
+                the Median Element should have (n*m)/2 elements less than it, In this case
+                so for a Element b/w min and max
+                    their exists a number which is > (n*m)/2 elements of the array
+                so eventually the mid will arrive at a number which is >(n*m)/2 elements, that is the Median
+                since the rows are sorted you can figure out number of elements> mid using binarySearch
