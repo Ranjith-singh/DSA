@@ -1,0 +1,21 @@
+Remove Outermost Parentheses:
+    Given a string with Parentheses () we need to remove Outermost Parentheses cover the inner Parentheses
+        ex: (()())(())=> ()() and ()=> ()()()
+    use stack to store the Parentheses
+    exclude the Outermost () using stack.isEmpty() in the if else case
+Reverse words in a given string / Palindrome Check:
+    Given string contains words sep by '.' or ' '
+    Reverse the occurrence of the words ex: hello..world.=> world.hello
+    notice the extra sep are removed:
+        this is by Check when sep appears
+            if new string is null sep doesn't get added to the output string
+Largest Odd Number in a String:
+    Here the main intuition is when the digit near the decimal in a string becomes odd
+        the substring up to their is also odd
+Longest Common Prefix:
+    take any string in the array of string and compare the rest
+    if all strings char at that pos isEqual:
+        then add that char into the new String
+    else:
+        return the formed new string
+
