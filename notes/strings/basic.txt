@@ -18,4 +18,32 @@ Longest Common Prefix:
         then add that char into the new String
     else:
         return the formed new string
-
+Isomorphic String:
+    2 strings are considered Isomorphic if a char from str1 is mapped to only 1 char is str2 and vise versa
+    use 2 different maps/set array to store the mapping
+        cause both represent different stream
+    check if both of them are unmapped then:
+        add mapping
+    else:
+        check if their mapping is with the current corresponding chars, if not return false
+    when the entire str.length() is traversed and all single mapping found return true
+Rotate String:
+    brute force approach:
+        take og string and left rotate it 1 char at a time using charAt and substring methods
+        compare it with the dest string
+        if equals():
+            return true
+        after str completes 1 entire rotation return false
+    optimal approach:
+        stmt: if a str2 is a rotated version of str1 then
+            str1+ str1 contains a substring equals() to str2
+            ex: str1= rotation str2= tionrota str1+str1= rota(tionrota)tion
+        check if str1+str2 contains() str2
+        note: in some cases the contains takes n^2 timeComplexity
+            Use kmpSearch()
+Check if two strings are anagram of each other:
+    check if their lengths are equals else return false
+    store chars of strings with freq in 2 different maps
+    traverse any 1 map with keys() then
+        compare their freq and if != then return false
+    when entire map is traversed return true
