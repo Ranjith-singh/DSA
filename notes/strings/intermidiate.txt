@@ -1,0 +1,32 @@
+Sort a String by frequency of chars in it:
+    use map to store the chars and its frequencies
+    you can use TreeMap/Priority Queue to store the values/keys in sorting
+        in the order of freq, lexicographical order
+    then use StringBuilder.toString() as op string instead of simple string
+        as adding char to a str creates new str
+Maximum nested depth of Parentheses:
+    The Parentheses should be complete and what's the max depth it has reached
+    use stack:
+        for ( push for ) pop
+        stack size should never go below 0, get max stack size reached
+    optimal approach:
+        using var: value shouldn't be < 0 take max value
+        increment and decrement based on ()
+Roman to Integer:
+    traverse from right to left
+    if value is < prev then subtract from sum else add
+String to Integer(atoi):
+    constrains:
+        String consists of presiding whitespaces
+        may consists of '+' or '-'
+        ignore preceding 0's
+        value can go beyond IntMax or IntMin
+    approach:
+        use pointer and loop through whitespaces
+        use flag to determine the sign if present
+        loop through preceding 0's
+        check value if beyond IntMax or IntMin return int limit, else value
+    
+
+
+
